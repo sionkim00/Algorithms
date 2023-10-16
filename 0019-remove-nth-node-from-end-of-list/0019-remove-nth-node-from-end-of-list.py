@@ -9,12 +9,12 @@ class Solution:
         left = dummy
         right = head
 
-        while n > 0 and right:
-            right = right.next
+        while n > 0:
             n -= 1
+            right = right.next
+        
         while right:
             left = left.next
             right = right.next
-
         left.next = left.next.next
         return dummy.next
