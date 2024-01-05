@@ -1,18 +1,11 @@
-                memo[key] = 0
-            elif prev >= nums[i]:
-                memo[key] = dp(i+1, prev)
-            else:
-                memo[key] = max(dp(i+1, nums[i]) + 1, dp(i+1, 
-prev))
-            return memo[key]
-        return dp()
-            elif i >= N:
-                pass
-            if key in memo:
-            key = (i, prev)
-        def dp(i=0, prev = float("-inf")):
-        memo = defaultdict()
-        N = len(nums)
-    def lengthOfLIS(self, nums: List[int]) -> int:
 class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        N = len(nums)
+        LIS = [1] * N
+
+        for i in range(N-1,-1,-1):
+            for j in range(i+1, len(nums)):
+                if nums[i] < nums[j]:
+                    LIS[i] = max(LIS[i], 1 + LIS[j])
+        return max(LIS)
 [
