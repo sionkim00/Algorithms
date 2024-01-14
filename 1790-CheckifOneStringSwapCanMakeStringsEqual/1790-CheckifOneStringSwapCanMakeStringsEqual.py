@@ -13,4 +13,5 @@
             
 
         return True
+        if len(s1) != len(s2):
 "
