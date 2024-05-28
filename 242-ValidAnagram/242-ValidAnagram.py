@@ -1,10 +1,11 @@
-        for c in t:
-            if not (c in letters) or letters[c] == 0:
-                return False
             letters[c] -= 1
-        
-        for c in letters:
-            if letters[c] > 0:
-        
                 return False
-"
+        
+        for key in letters:
+            if letters[key] != 0:
+                return False
+        return True
+            if not(c in letters):
+        
+        for c in t:
+"anagram"
