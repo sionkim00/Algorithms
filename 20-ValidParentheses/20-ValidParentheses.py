@@ -1,14 +1,19 @@
-            if c in "({[":
+            if c in "{([":
                 stack.append(c)
             else:
-                if len(stack) == 0 or stack[-1] != kvp[c]:
+                if len(stack) == 0:
                     return False
-        for c in s:
-                stack.pop()
-
-        stack = []
-        kvp = {")": "(", "]": "[", "}": "{"}
-
-    def isValid(self, s: str) -> bool:
-class Solution:
+                top = stack.pop()
+                if top != p[c]:
+                    return False
+        return len(stack) == 0
 "
+"()"
+"()[]{}"
+"(]"
+true
+true
+false
+true
+true
+false
