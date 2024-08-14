@@ -1,7 +1,18 @@
-            elif i + 2 <= n:
-                memo[i] = dp(i+1) + dp(i+2) + 1
+    def climbStairs(self, n: int) -> int:
+        memo = defaultdict()
+        def recur(n):
+            if n in memo:
+                pass
+            elif n <= 2:
+                memo[n] = n
             else:
-                memo[i] = dp(i+1)
-            return memo[i]
-        return dp() + 1
+                memo[n] = recur(n-1) + recur(n-2)
+            return memo[n]
+        return recur(n)
 2
+2
+3
+2
+3
+2
+3
